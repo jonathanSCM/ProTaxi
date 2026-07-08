@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastreo finalizado — Avaroa</title>
+    <title>Rastreo finalizado — ProTaxi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         :root {
-            --orange: #FF8C00;
+            --orange: #6D1B96;
             --dark:   #0f172a;
         }
 
@@ -268,7 +268,7 @@
                 @if($isCompleted)
                     El enlace de rastreo solo es válido mientras el viaje está en curso. Una vez entregado, el acceso se desactiva automáticamente.
                 @elseif($isCancelled)
-                    El viaje fue cancelado y el enlace ya no es válido. Si tienes dudas, contacta con soporte de Avaroa.
+                    El viaje fue cancelado y el enlace ya no es válido. Si tienes dudas, contacta con soporte de ProTaxi.
                 @else
                     Si crees que esto es un error, comunícate con quien compartió este enlace contigo.
                 @endif
@@ -280,7 +280,7 @@
     <div class="card-body">
         <div class="info-note">
             <i class="fas fa-circle-info"></i>
-            <span>El enlace que ingresaste no corresponde a ningún viaje activo en Avaroa. Verifica que el link sea correcto.</span>
+            <span>El enlace que ingresaste no corresponde a ningún viaje activo en ProTaxi. Verifica que el link sea correcto.</span>
         </div>
     </div>
     @endif
@@ -290,8 +290,8 @@
 {{-- Brand --}}
 <div class="brand-footer">
     <i class="fas fa-truck-fast" style="color:var(--orange)"></i>
-    <span>AVAROA</span>
-    <span style="color:rgba(255,255,255,.25); font-weight:400; font-size:.75rem; letter-spacing:0">Delivery</span>
+    <span>ProTaxi</span>
+    <span style="color:rgba(255,255,255,.25); font-weight:400; font-size:.75rem; letter-spacing:0">Bolivia</span>
 </div>
 
 </body>

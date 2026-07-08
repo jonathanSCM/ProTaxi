@@ -31,10 +31,10 @@ Inicio de Sesión de Administrador
                                 <div class="col-md-12 text-center">
                                     <a href="{{ url('/') }}">
                                         <img
-                                            src="<?php echo '/' . $general_setting['app_logo'] ?? ''; ?>"
-                                            width="200px"
-                                            height="200px"
-                                            alt="Footer Payment Image">
+                                            src="{{ asset('protaxi-logo-nbg.png') }}"
+                                            width="220"
+                                            style="max-width:220px;height:auto;margin-bottom:10px;"
+                                            alt="ProTaxi">
                                     </a>
                                 </div>
 

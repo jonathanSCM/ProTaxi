@@ -89,7 +89,7 @@
     .bubble-customer { background: white; color: #1e293b; border-bottom-left-radius: 3px; }
     .bubble-bot      { background: #d9fdd3; color: #1a3a2a; border-bottom-right-radius: 3px; }
     .bubble-admin    { background: #3b4fd4; color: white; border-bottom-right-radius: 3px; }
-    .bubble-system   { background: #fff8e1; color: #78350f; border-bottom-right-radius: 3px; font-style: italic; font-size: .82rem; }
+    .bubble-system   { background: #F2E7FB; color: #78350f; border-bottom-right-radius: 3px; font-style: italic; font-size: .82rem; }
 
     .bubble-meta {
         display: flex; align-items: center; justify-content: flex-end; gap: 4px;

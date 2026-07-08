@@ -10,10 +10,10 @@
 
 <style>
     :root {
-        --primary: #f89c10;
-        --primary-dark: #e07a00;
-        --accent: #f89c10;
-        --gradient: linear-gradient(135deg, #f89c10 0%, #ff9f1c 100%);
+        --primary: #6D1B96;
+        --primary-dark: #470E6F;
+        --accent: #6D1B96;
+        --gradient: linear-gradient(135deg, #6D1B96 0%, #470E6F 100%);
         --light-bg: #f8f9fa;
         --border-color: #eaeaea;
         --text-dark: #333;
@@ -57,7 +57,7 @@
     .blog-content blockquote {
         border-left: 5px solid var(--primary);
         padding: 20px 30px;
-        background: #fff8e1;
+        background: #F2E7FB;
         font-style: italic;
         margin: 40px 0;
         border-radius: 8px;
@@ -247,7 +247,7 @@
     .btn-primary:hover {
         background: var(--primary-dark);
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(248, 156, 16, 0.4);
+        box-shadow: 0 8px 25px rgba(109, 27, 150, 0.4);
     }
 
     /* Section Title */

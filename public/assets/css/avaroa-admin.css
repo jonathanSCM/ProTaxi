@@ -15,10 +15,10 @@
    0. CSS DESIGN TOKENS — light & dark
    ============================================================ */
 :root {
-    --av-orange:        #FF8C00;
-    --av-orange-hot:    #E67E00;
-    --av-orange-light:  rgba(255,140,0,0.12);
-    --av-orange-glow:   rgba(255,140,0,0.30);
+    --av-orange:        #6D1B96;
+    --av-orange-hot:    #470E6F;
+    --av-orange-light:  rgba(109,27,150,0.12);
+    --av-orange-glow:   rgba(109,27,150,0.30);
 
     /* Backgrounds */
     --av-body-bg:       #F0F2F5;

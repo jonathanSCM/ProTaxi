@@ -11,8 +11,8 @@
       <td align="center">
         <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(1,94,128,0.12);">
           <tr>
-            <td style="background-color:#015E80; padding:28px 32px; text-align:center;">
-              <span style="color:#ffffff; font-size:20px; font-weight:700; letter-spacing:0.5px;">Delivery AVAROA</span>
+            <td style="background-color:#6D1B96; padding:28px 32px; text-align:center;">
+              <span style="color:#ffffff; font-size:20px; font-weight:700; letter-spacing:0.5px;">ProTaxi</span>
             </td>
           </tr>
 
@@ -44,7 +44,7 @@
           <tr>
             <td style="background-color:#f8fafc; padding:18px 32px; text-align:center; border-top:1px solid #e2e8f0;">
               <p style="margin:0; color:#94a3b8; font-size:11.5px;">
-                © {{ date('Y') }} Delivery AVAROA — Este es un correo automático, no respondas a este mensaje.
+                © {{ date('Y') }} ProTaxi — Este es un correo automático, no respondas a este mensaje.
               </p>
             </td>
           </tr>

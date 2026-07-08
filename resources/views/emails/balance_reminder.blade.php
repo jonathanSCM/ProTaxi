@@ -76,7 +76,7 @@
         </div>
 
         <div class="footer">
-            <p>© {{ date('Y') }} AVAROA Delivery. Todos los derechos reservados.</p>
+            <p>© {{ date('Y') }} ProTaxi. Todos los derechos reservados.</p>
             <p>Soporte: <a href="mailto:admin@deliveryavaroa.info">admin@deliveryavaroa.info</a></p>
         </div>
     </div>

@@ -5,7 +5,7 @@
 <style>
 /* ═══ Tokens ════════════════════════════════════════════ */
 :root {
-    --orange:  #FF8C00;
+    --orange:  #6D1B96;
     --purple:  #5c61f2;
     --radius:  14px;
 }
@@ -181,7 +181,7 @@
     font-size: .72rem; font-weight: 700;
 }
 .svc-taxi  { background: rgba(59,130,246,.15); color: #60a5fa; }
-.svc-del   { background: rgba(255,140,0,.15);  color: var(--orange); }
+.svc-del   { background: rgba(109, 27, 150,.15);  color: var(--orange); }
 .svc-cargo { background: rgba(20,184,166,.15); color: #2dd4bf; }
 
 /* ── Client avatar ───────────────── */
@@ -220,9 +220,9 @@
     font-size: .75rem; cursor: pointer; transition: all .15s;
 }
 .btn-track {
-    background: rgba(255,140,0,.15); color: var(--orange);
+    background: rgba(109, 27, 150,.15); color: var(--orange);
 }
-.btn-track:hover { background: rgba(255,140,0,.3); }
+.btn-track:hover { background: rgba(109, 27, 150,.3); }
 .btn-del {
     background: rgba(239,68,68,.12); color: #f87171;
 }
@@ -701,7 +701,7 @@ body:not(.dark) .ftab-all { border-color: #94a3b8; color: #64748b; }
                 <i class="fas fa-phone me-1"></i>Llamar
             </a>
             <button type="button" onclick="openTrackingLink({{ $trip->id }})" data-bs-dismiss="modal"
-               style="flex:1;min-width:120px;padding:.75rem;border-radius:12px;background:#FF8C00;color:white;border:none;font-weight:600;font-size:.85rem;cursor:pointer;">
+               style="flex:1;min-width:120px;padding:.75rem;border-radius:12px;background:#6D1B96;color:white;border:none;font-weight:600;font-size:.85rem;cursor:pointer;">
                 <i class="fas fa-map-marker-alt me-1"></i>Rastrear
             </button>
         </div>

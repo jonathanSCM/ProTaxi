@@ -18,9 +18,9 @@
 
 <style>
     :root {
-        --primary: #f89c10;
-        --primary-dark: #e07a00;
-        --gradient: linear-gradient(135deg, #f89c10 0%, #ff9f1c 100%);
+        --primary: #6D1B96;
+        --primary-dark: #470E6F;
+        --gradient: linear-gradient(135deg, #6D1B96 0%, #470E6F 100%);
         --dark-bg: #1a1d29;
         --text-dark: #2d3748;
         --border: #e2e8f0;
@@ -77,7 +77,7 @@
     }
     .blog-card:hover {
         transform: translateY(-18px);
-        box-shadow: 0 35px 70px rgba(248,156,16,0.25);
+        box-shadow: 0 35px 70px rgba(109, 27, 150,0.25);
         border-color: var(--primary);
     }
 

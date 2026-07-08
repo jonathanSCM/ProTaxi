@@ -1,14 +1,14 @@
 @extends('master')
 
-@section('title', 'Crear Cuenta - Avaroa')
+@section('title', 'Crear Cuenta - ProTaxi')
 
 @section('content')
     <style>
         :root {
-            --primary: #f89c10;
-            --primary-dark: #e07a00;
-            --gradient: linear-gradient(135deg, #f89c10 0%, #ff9f1c 100%);
-            --light: #fff8e1;
+            --primary: #6D1B96;
+            --primary-dark: #470E6F;
+            --gradient: linear-gradient(135deg, #6D1B96 0%, #470E6F 100%);
+            --light: #F2E7FB;
             --gray-100: #f8f9fa;
             --gray-600: #6c757d;
             --gray-800: #343a40;
@@ -26,7 +26,7 @@
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(248, 156, 16, 0.15);
+            box-shadow: 0 20px 60px rgba(109, 27, 150, 0.15);
             max-width: 520px;
             margin: 0 auto;
         }
@@ -85,7 +85,7 @@
 
         .form-control:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(248, 156, 16, 0.15);
+            box-shadow: 0 0 0 4px rgba(109, 27, 150, 0.15);
         }
 
         .btn-primary {
@@ -101,7 +101,7 @@
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(248, 156, 16, 0.4);
+            box-shadow: 0 10px 30px rgba(109, 27, 150, 0.4);
         }
 
         .otp-input {
@@ -116,7 +116,7 @@
 
         .otp-input:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(248, 156, 16, 0.2);
+            box-shadow: 0 0 0 4px rgba(109, 27, 150, 0.2);
         }
 
         .progress-steps {

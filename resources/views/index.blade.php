@@ -77,7 +77,7 @@
         <!-- Step 1 -->
         <div class="col-md-3 col-sm-6 mb-4">
           <div class="rounded-circle mx-auto mb-3"
-               style="width:55px; height:55px; background:#f89c10; color:white;
+               style="width:55px; height:55px; background:#6D1B96; color:white;
                       display:flex; align-items:center; justify-content:center;
                       font-weight:700; font-size:20px;">
             1
@@ -92,7 +92,7 @@
         <!-- Step 2 -->
         <div class="col-md-3 col-sm-6 mb-4">
           <div class="rounded-circle mx-auto mb-3"
-               style="width:55px; height:55px; background:#f89c10; color:white;
+               style="width:55px; height:55px; background:#6D1B96; color:white;
                       display:flex; align-items:center; justify-content:center;
                       font-weight:700; font-size:20px;">
             2
@@ -107,7 +107,7 @@
         <!-- Step 3 -->
         <div class="col-md-3 col-sm-6 mb-4">
           <div class="rounded-circle mx-auto mb-3"
-               style="width:55px; height:55px; background:#f89c10; color:white;
+               style="width:55px; height:55px; background:#6D1B96; color:white;
                       display:flex; align-items:center; justify-content:center;
                       font-weight:700; font-size:20px;">
             3
@@ -138,7 +138,7 @@
                         <div class="text-center position-relative" style="z-index:1;">
                             <h2 style="font-weight:700; font-size:2.8rem; color:#222;">{{ $plan->title }}</h2>
                             <div class="line"></div>
-                            <p style="font-style:italic; margin-top:-5px; color:#f89c10;">Funding</p>
+                            <p style="font-style:italic; margin-top:-5px; color:#6D1B96;">Funding</p>
 
                             <p style="font-size:13px; letter-spacing:1px; font-weight:600; color:#333;">
                                 CAPITAL: {{ $plan->capital_formatted }}

@@ -46,7 +46,7 @@
         text-align: center; cursor: pointer; transition: all .2s; color: #64748b;
     }
     .broadcast-box:hover, .broadcast-box.selected {
-        border-color: #FF8C00; background: #fff8f0; color: #FF8C00;
+        border-color: #6D1B96; background: #fff8f0; color: #6D1B96;
     }
     .broadcast-box i { font-size: 1.8rem; margin-bottom: 8px; display: block; }
 

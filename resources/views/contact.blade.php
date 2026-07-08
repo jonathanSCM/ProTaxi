@@ -7,7 +7,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <style>
-    :root { --primary: #f89c10; --dark: #1e293b; --light: #f8fafc; }
+    :root { --primary: #6D1B96; --dark: #1e293b; --light: #f8fafc; }
     body { background: #f8fafc; }
     .pages-hero { background: var(--primary); padding: 60px 0; text-align: center; color: #fff; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; }
     .pages-hero h1 { font-size: 42px; font-weight: 700; }
@@ -16,7 +16,7 @@
     .cw-box:hover { transform: translateY(-5px); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
     .cw-icon { font-size: 45px; color: var(--primary); margin-bottom: 15px; }
     .custom-form, .message-form { border-radius: 12px; border: 1px solid #ddd; padding: 12px 15px; font-size: 15px; }
-    .custom-form:focus, .message-form:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(248,156,16,0.4); }
+    .custom-form:focus, .message-form:focus { border-color: var(--primary); box-shadow: 0 0 5px rgba(109, 27, 150,0.4); }
     .btn-primary-custom { background: var(--primary); color: #fff; padding: 12px 25px; border-radius: 30px; font-weight: 600; border: none; transition: .3s; }
     .btn-primary-custom:hover { background: #d8850e; }
 </style>
@@ -136,7 +136,7 @@ $(document).ready(function () {
                         icon: 'success',
                         title: 'Message Sent!',
                         text: res.message || 'Your message has been sent successfully.',
-                        confirmButtonColor: '#f89c10'
+                        confirmButtonColor: '#6D1B96'
                     });
                     formElement.reset();
                 } else {
@@ -145,7 +145,7 @@ $(document).ready(function () {
                         icon: 'info',
                         title: 'Notice',
                         text: res.message || 'Response received.',
-                        confirmButtonColor: '#f89c10'
+                        confirmButtonColor: '#6D1B96'
                     });
                 }
                 $btn.prop("disabled", false).text("Send Message");
@@ -167,7 +167,7 @@ $(document).ready(function () {
                         icon: 'warning',
                         title: 'Validation Error',
                         html: (messages.length ? messages.join('<br>') : 'Please check your input.'),
-                        confirmButtonColor: '#f89c10'
+                        confirmButtonColor: '#6D1B96'
                     });
                 } else {
                     // Generic error
@@ -177,7 +177,7 @@ $(document).ready(function () {
                         icon: 'error',
                         title: 'Error',
                         text: msg,
-                        confirmButtonColor: '#f89c10'
+                        confirmButtonColor: '#6D1B96'
                     });
                 }
             }

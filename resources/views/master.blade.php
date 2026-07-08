@@ -38,13 +38,13 @@
         }
 
         .navbar-custom {
-            background: #f89c10;
+            background: #6D1B96;
             padding: 14px 0;
         }
 
         .hero-section {
             padding: 110px 0 140px 0;
-            background: linear-gradient(to right, white, #fff4e6);
+            background: linear-gradient(to right, white, #F2E7FB);
         }
 
         .hero-title {
@@ -54,7 +54,7 @@
         }
 
         .hero-title span {
-            color: #f89c10;
+            color: #6D1B96;
         }
 
         .hero-text {
@@ -65,7 +65,7 @@
         }
 
         .btn-orange {
-            background: #f89c10;
+            background: #6D1B96;
             color: #fff;
             padding: 12px 26px;
             border-radius: 10px;
@@ -76,24 +76,24 @@
         }
 
         .btn-orange:hover {
-            background: #e68a00;
+            background: #470E6F;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(246, 156, 16, 0.4);
+            box-shadow: 0 5px 15px rgba(109, 27, 150, 0.4);
         }
 
         .btn-outline-orange {
-            border: 2px solid #f89c10;
+            border: 2px solid #6D1B96;
             padding: 12px 26px;
             border-radius: 10px;
             font-weight: 600;
-            color: #f89c10;
+            color: #6D1B96;
             font-size: 15px;
             background: transparent;
             transition: all 0.3s ease;
         }
 
         .btn-outline-orange:hover {
-            background: #f89c10;
+            background: #6D1B96;
             color: white;
             transform: translateY(-2px);
         }
@@ -114,7 +114,7 @@
         }
 
         .feature-title {
-            color: #f89c10;
+            color: #6D1B96;
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 10px;
@@ -128,13 +128,13 @@
 
         /* ===== COLOR VARIABLES ===== */
         :root {
-            --primary: #ff8c00;
-            --primary-dark: #e67e00;
-            --primary-light: #ffb347;
-            --secondary: #10b981;
-            --secondary-dark: #059669;
-            --accent: #ff8c00;
-            --accent-dark: #e67e00;
+            --primary: #6D1B96;
+            --primary-dark: #470E6F;
+            --primary-light: #9C4DC9;
+            --secondary: #18EEA4;
+            --secondary-dark: #10B981;
+            --accent: #18EEA4;
+            --accent-dark: #10B981;
             --dark: #1e293b;
             --darker: #0f172a;
             --light: #f8fafc;
@@ -291,7 +291,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            background: rgba(255, 140, 0, 0.1);
+            background: rgba(109, 27, 150, 0.1);
             color: var(--primary);
             font-size: 2rem;
             transition: all 0.3s;
@@ -383,12 +383,12 @@
             padding: 12px 30px;
             border-radius: 10px;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(109, 27, 150, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(109, 27, 150, 0.4);
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
         }
 
@@ -405,7 +405,7 @@
             background-color: var(--primary);
             border-color: var(--primary);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(109, 27, 150, 0.3);
         }
 
         /* ===== SECTION TITLES ===== */
@@ -445,7 +445,7 @@
             padding: 15px 35px;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(109, 27, 150, 0.4);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -453,7 +453,7 @@
 
         .ai-assistant-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(255, 140, 0, 0.5);
+            box-shadow: 0 12px 30px rgba(109, 27, 150, 0.5);
         }
 
         /* ===== FOOTER ===== */
@@ -597,7 +597,7 @@
 
         /* ===== GLOW EFFECT ===== */
         .glow {
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 0 20px rgba(109, 27, 150, 0.3);
         }
 
         .count-up {
@@ -651,7 +651,7 @@
 
         .form-control:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 0.2rem rgba(255, 140, 0, 0.25);
+            box-shadow: 0 0 0 0.2rem rgba(109, 27, 150, 0.25);
         }
 
         /* ===== BLOG STYLES ===== */
@@ -700,7 +700,7 @@
         }
 
         .faq-header:hover {
-            background: rgba(255, 140, 0, 0.05);
+            background: rgba(109, 27, 150, 0.05);
         }
 
         .faq-body {
@@ -731,7 +731,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 140, 0, 0.1);
+            background: rgba(109, 27, 150, 0.1);
             color: var(--primary);
             font-size: 1.5rem;
             margin-bottom: 20px;
@@ -906,7 +906,7 @@
         }
 
         .fund-card.active {
-            border: 2px solid #f89c10;
+            border: 2px solid #6D1B96;
             transform: scale(1.02);
         }
 
@@ -923,7 +923,7 @@
         .line {
             width: 60px;
             height: 2px;
-            background: #f89c10;
+            background: #6D1B96;
             margin: 8px 0 15px 0;
         }
 
@@ -1101,7 +1101,7 @@
                     <li class="nav-item px-2">
                         <a class="btn rounded-pill px-4 py-2"
                            href="{{ url('dashboard') }}"
-                           style="background:var(--primary);color:white;border:none;font-weight:600;transition:0.3s;box-shadow:0px 4px 10px rgba(255,140,0,0.3);"
+                           style="background:var(--primary);color:white;border:none;font-weight:600;transition:0.3s;box-shadow:0px 4px 10px rgba(109, 27, 150,0.3);"
                            onmouseover="this.style.background='var(--primary-dark)';this.style.transform='translateY(-3px)'"
                            onmouseout="this.style.background='var(--primary)';this.style.transform='translateY(0)'">
                             Mi Cuenta
@@ -1116,9 +1116,9 @@
                     </li>
                     <li class="nav-item px-2">
                         <a class="btn rounded-pill px-4 py-2"
-                           href="https://wa.me/59169160031?text=Hola,%20quiero%20pedir%20un%20servicio%20Avaroa"
+                           href="https://wa.me/59169160031?text=Hola,%20quiero%20pedir%20un%20servicio%20ProTaxi"
                            target="_blank"
-                           style="background:var(--primary);color:white;border:none;font-weight:600;transition:0.3s;box-shadow:0px 4px 10px rgba(255,140,0,0.3);">
+                           style="background:var(--primary);color:white;border:none;font-weight:600;transition:0.3s;box-shadow:0px 4px 10px rgba(109, 27, 150,0.3);">
                             <i class="fab fa-whatsapp me-1"></i> Pedir Ahora
                         </a>
                     </li>
@@ -1141,7 +1141,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h4 class="fw-bold mb-3">
-                        <img src="{{ asset($general_setting['app_logo'] ?? '') }}" alt="Avaroa" width="120" height="60" style="object-fit:contain;">
+                        <img src="{{ asset($general_setting['app_logo'] ?? '') }}" alt="ProTaxi" width="120" height="60" style="object-fit:contain;">
                     </h4>
                     <p class="text-white opacity-75">Servicio rápido y de calidad en delivery, taxi y carga en Bolivia. Conectamos a conductores y clientes en tiempo real.</p>
                     <div class="social-icons mt-4">
@@ -1186,7 +1186,7 @@
             <hr class="my-4 bg-secondary">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; {{ date('Y') }} Avaroa. Todos los derechos reservados. Bolivia.</p>
+                    <p class="mb-0">&copy; {{ date('Y') }} ProTaxi. Todos los derechos reservados. Bolivia.</p>
                 </div>
 
             </div>

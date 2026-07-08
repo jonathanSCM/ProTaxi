@@ -5048,7 +5048,7 @@ CREATE TABLE `settings` (
 LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 INSERT INTO `settings` VALUES
-(1,'app_name','AVAROA','2022-12-04 17:05:33','2026-03-05 03:39:55'),
+(1,'app_name','ProTaxi','2022-12-04 17:05:33','2026-03-05 03:39:55'),
 (2,'app_email','admin@AVAROA.com','2022-12-04 17:05:33','2026-03-05 03:39:55'),
 (3,'app_contact_number','+591 45626594','2022-12-04 17:05:33','2024-10-27 00:11:55'),
 (4,'app_location','Bolivia','2022-12-04 17:05:33','2026-01-30 11:28:11'),

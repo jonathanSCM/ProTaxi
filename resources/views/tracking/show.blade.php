@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Rastrear Pedido — Avaroa</title>
+    <title>Rastrear Pedido — ProTaxi</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         :root {
-            --orange: #FF8C00;
+            --orange: #6D1B96;
             --dark:   #0f172a;
             --green:  #22c55e;
             --red:    #ef4444;
@@ -55,8 +55,8 @@
         }
         .brand-icon {
             width: 32px; height: 32px;
-            background: rgba(255,140,0,.15);
-            border: 1px solid rgba(255,140,0,.3);
+            background: rgba(109, 27, 150,.15);
+            border: 1px solid rgba(109, 27, 150,.3);
             border-radius: 9px;
             display: flex;
             align-items: center;
@@ -146,7 +146,7 @@
             font-weight: 800;
             overflow: hidden;
             flex-shrink: 0;
-            box-shadow: 0 3px 10px rgba(255,140,0,.3);
+            box-shadow: 0 3px 10px rgba(109, 27, 150,.3);
         }
         .driver-name { font-weight: 700; font-size: .95rem; color: var(--dark); }
         .driver-sub  { font-size: .78rem; color: #64748b; margin-top: 3px; }
@@ -297,7 +297,7 @@
             position: absolute;
             inset: 0;
             border-radius: 50%;
-            background: rgba(255,140,0,.3);
+            background: rgba(109, 27, 150,.3);
             animation: drvPulse 2s infinite;
         }
         @keyframes drvPulse {
@@ -334,7 +334,7 @@
 <div class="top-bar">
     <div class="brand">
         <div class="brand-icon"><i class="fas fa-truck-fast"></i></div>
-        AVAROA
+        ProTaxi
     </div>
     <div class="live-chip" id="liveChip">
         <div class="live-dot" id="liveDot"></div>
@@ -352,7 +352,7 @@
     <div class="drag-handle"></div>
 
     @php
-        $driverName    = $trip->driver?->user?->name ?? 'Conductor Avaroa';
+        $driverName    = $trip->driver?->user?->name ?? 'Conductor ProTaxi';
         $initial       = strtoupper(substr($driverName, 0, 1));
         $photo         = $trip->driver?->user?->profile_photo;
         $driverVehicle = $trip->driver?->vehicles?->first();
@@ -521,7 +521,7 @@
 
         // Trayecto recorrido
         pathLine = L.polyline([], {
-            color: '#FF8C00',
+            color: '#18EEA4',
             weight: 4,
             opacity: .85,
         }).addTo(map);
