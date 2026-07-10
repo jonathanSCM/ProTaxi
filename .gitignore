@@ -19,3 +19,6 @@ yarn-error.log
 
 # Local DB backups / safety dumps (contain real data)
 /backup_*.sql
+
+# Firebase service-account key (secret — never commit)
+/public/firebase_credentials.json

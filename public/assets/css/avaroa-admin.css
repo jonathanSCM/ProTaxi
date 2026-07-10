@@ -264,6 +264,83 @@ body.dark-only .page-item.disabled .page-link {
 /* ============================================================
    9. BADGES — semantic colours that stay readable on dark
    ============================================================ */
+
+/* ============================================================
+   LOGIN + AUTH PAGE OVERRIDES
+   ============================================================ */
+.login-card {
+    background: radial-gradient(circle at top left, rgba(0, 255, 212, 0.16), transparent 24%),
+                radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 18%),
+                #070914 !important;
+    min-height: 100vh;
+    padding: 40px 16px !important;
+}
+.login-card .login-main {
+    max-width: 440px;
+    width: 100%;
+    padding: 42px 34px !important;
+    border-radius: 28px;
+    background: rgba(10, 18, 40, 0.96) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
+}
+.login-card .login-main .theme-form label {
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+.login-card .login-main .theme-form input.form-control {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #f8fafc;
+    border-radius: 16px;
+    padding: 14px 16px;
+    min-height: 52px;
+}
+.login-card .login-main .theme-form input.form-control:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.12);
+    color: #ffffff;
+}
+.login-card .login-main .theme-form input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+    opacity: 1;
+}
+.login-card .login-main .theme-form .btn-primary {
+    background: #14b8a6;
+    border-color: transparent;
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 14px 0;
+    font-weight: 700;
+    box-shadow: 0 18px 42px rgba(20, 184, 166, 0.20);
+}
+.login-card .login-main .theme-form .btn-primary:hover {
+    background: #0f766e;
+}
+.login-card .login-main .theme-form .show-hide {
+    color: rgba(255, 255, 255, 0.7);
+}
+.login-card .login-main .theme-form .show-hide:hover {
+    color: #ffffff;
+}
+.login-card .login-main .theme-form .link {
+    color: #7dd3fc;
+}
+.login-card .login-main .theme-form .link:hover {
+    color: #bef264;
+}
+.login-card .text-center img {
+    max-width: 220px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.35));
+}
+
+/* ============================================================
+   9. BADGES — semantic colours that stay readable on dark
+   ============================================================ */
 body.dark-only .badge.bg-light {
     background-color: #323347 !important;
     color: rgba(255, 255, 255, 0.8) !important;
