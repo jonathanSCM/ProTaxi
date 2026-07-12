@@ -11,10 +11,10 @@ Inicio de Sesión de Administrador
     <div class="container-fluid p-0">
         <div class="row m-0">
             <div class="col-12 p-0">
-                <div class="login-card" style="background: #10101C;">
+                <div class="login-card" style="background: #150C28;">
                     <div>
 
-                        <div class="login-main" style="background: #10101C;">
+                        <div class="login-main" style="background: #150C28;">
                             <form class="theme-form" action="{{ url('admin/log') }}" method="post">
                                 @if (Session::has('success'))
                                     <div class="alert alert-success">

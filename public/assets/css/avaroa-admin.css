@@ -1,12 +1,13 @@
 /**
- * AVAROA ADMIN — Global dark-mode overrides + general polish
+ * PROTAXI ADMIN — Global dark-mode overrides + general polish
  * Loaded after style.css and color-1.css so all rules here win.
  *
- * Dark palette reference (from style.css theme):
- *   body bg  : #10101c
- *   card bg  : #171829
- *   surface  : #1d1e31
- *   border   : #323347
+ * ProTaxi dark palette (purple + mint green):
+ *   body bg  : #150C28
+ *   card bg  : #1E1338
+ *   surface  : #281B47
+ *   border   : #37285C
+ *   accent   : #2DD6A0 (mint green)
  *   text     : rgba(255,255,255,.80)
  *   muted    : rgba(255,255,255,.40)
  */
@@ -15,10 +16,10 @@
    0. CSS DESIGN TOKENS — light & dark
    ============================================================ */
 :root {
-    --av-orange:        #6D1B96;
-    --av-orange-hot:    #470E6F;
-    --av-orange-light:  rgba(109,27,150,0.12);
-    --av-orange-glow:   rgba(109,27,150,0.30);
+    --av-orange:        #2DD6A0;
+    --av-orange-hot:    #21B385;
+    --av-orange-light:  rgba(45,214,160,0.12);
+    --av-orange-glow:   rgba(45,214,160,0.30);
 
     /* Backgrounds */
     --av-body-bg:       #F0F2F5;
@@ -36,16 +37,16 @@
     --av-text-muted:    #6B7280;
 
     /* Sidebar (always dark) */
-    --av-sidebar-bg:      #0A0F1C;
-    --av-sidebar-surface: #111827;
+    --av-sidebar-bg:      #120A22;
+    --av-sidebar-surface: #1A1030;
 }
 
 body.dark-only {
-    --av-body-bg:    #10101c;
-    --av-card-bg:    #171829;
-    --av-surface:    #1d1e31;
-    --av-header-bg:  #171829;
-    --av-border:     #323347;
+    --av-body-bg:    #150C28;
+    --av-card-bg:    #1E1338;
+    --av-surface:    #281B47;
+    --av-header-bg:  #1A1030;
+    --av-border:     #37285C;
     --av-text:       rgba(255,255,255,0.80);
     --av-text-muted: rgba(255,255,255,0.40);
 }
@@ -76,10 +77,10 @@ body.dark-only .header-logo-wrapper .for-light {
 body.dark-only .bg-white,
 body.dark-only .card-header.bg-white,
 body.dark-only .modal-content .bg-white {
-    background-color: #171829 !important;
+    background-color: #1E1338 !important;
 }
 body.dark-only .bg-light {
-    background-color: #1d1e31 !important;
+    background-color: #281B47 !important;
 }
 body.dark-only .text-dark {
     color: rgba(255, 255, 255, 0.9) !important;
@@ -92,10 +93,10 @@ body.dark-only .border-top,
 body.dark-only .border-bottom,
 body.dark-only .border-start,
 body.dark-only .border-end {
-    border-color: #323347 !important;
+    border-color: #37285C !important;
 }
 body.dark-only hr {
-    border-color: #323347;
+    border-color: #37285C;
     opacity: .5;
 }
 
@@ -103,17 +104,17 @@ body.dark-only hr {
    3. CARDS — general
    ============================================================ */
 body.dark-only .card {
-    background-color: #171829;
-    border-color: #323347;
+    background-color: #1E1338;
+    border-color: #37285C;
 }
 body.dark-only .card-header {
-    background-color: #171829 !important;
-    border-bottom-color: #323347 !important;
+    background-color: #1E1338 !important;
+    border-bottom-color: #37285C !important;
     color: rgba(255, 255, 255, 0.85);
 }
 body.dark-only .card-footer {
-    background-color: #171829 !important;
-    border-top-color: #323347 !important;
+    background-color: #1E1338 !important;
+    border-top-color: #37285C !important;
 }
 
 /* ============================================================
@@ -121,7 +122,7 @@ body.dark-only .card-footer {
    ============================================================ */
 body.dark-only .table {
     color: rgba(255, 255, 255, 0.8);
-    --bs-table-border-color: #323347;
+    --bs-table-border-color: #37285C;
     --bs-table-color: rgba(255, 255, 255, 0.8);
     --bs-table-bg: transparent;
     --bs-table-striped-bg: rgba(255,255,255,.03);
@@ -129,18 +130,18 @@ body.dark-only .table {
 }
 body.dark-only .table th,
 body.dark-only .table td {
-    border-color: #323347 !important;
+    border-color: #37285C !important;
 }
 body.dark-only .table thead th {
     color: rgba(255, 255, 255, 0.6);
-    background-color: #1d1e31 !important;
+    background-color: #281B47 !important;
 }
 body.dark-only .table-light,
 body.dark-only .table-light th,
 body.dark-only .table-light td {
-    background-color: #1d1e31 !important;
+    background-color: #281B47 !important;
     color: rgba(255, 255, 255, 0.8) !important;
-    border-color: #323347 !important;
+    border-color: #37285C !important;
 }
 
 /* ============================================================
@@ -148,31 +149,31 @@ body.dark-only .table-light td {
    ============================================================ */
 body.dark-only .form-control,
 body.dark-only .form-select {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.8);
 }
 body.dark-only .form-control:focus,
 body.dark-only .form-select:focus {
-    background-color: #1d1e31;
-    border-color: #5b5fc7;
+    background-color: #281B47;
+    border-color: #2DD6A0;
     color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 0 .25rem rgba(91, 95, 199, .25);
+    box-shadow: 0 0 0 .25rem rgba(45, 214, 160, .25);
 }
 body.dark-only .form-control::placeholder {
     color: rgba(255, 255, 255, 0.25);
 }
 body.dark-only .input-group-text {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.6);
 }
 body.dark-only .form-label {
     color: rgba(255, 255, 255, 0.75);
 }
 body.dark-only .form-check-input {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
 }
 body.dark-only .form-text {
     color: rgba(255, 255, 255, 0.35);
@@ -182,17 +183,17 @@ body.dark-only .form-text {
    6. MODALS
    ============================================================ */
 body.dark-only .modal-content {
-    background-color: #171829;
+    background-color: #1E1338;
     color: rgba(255, 255, 255, 0.8);
-    border-color: #323347;
+    border-color: #37285C;
 }
 body.dark-only .modal-header {
-    border-bottom-color: #323347;
-    background-color: #171829;
+    border-bottom-color: #37285C;
+    background-color: #1E1338;
 }
 body.dark-only .modal-footer {
-    border-top-color: #323347;
-    background-color: #171829;
+    border-top-color: #37285C;
+    background-color: #1E1338;
 }
 
 /* ============================================================
@@ -211,8 +212,8 @@ body.dark-only .nav-tabs .nav-link {
     color: rgba(255, 255, 255, 0.6);
 }
 body.dark-only .nav-tabs .nav-link.active {
-    background-color: #1d1e31;
-    border-color: #323347 #323347 #1d1e31;
+    background-color: #281B47;
+    border-color: #37285C #37285C #281B47;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -220,52 +221,52 @@ body.dark-only .nav-tabs .nav-link.active {
    8. DROPDOWN / LIST-GROUP / PAGINATION
    ============================================================ */
 body.dark-only .dropdown-menu {
-    background-color: #171829;
-    border-color: #323347;
+    background-color: #1E1338;
+    border-color: #37285C;
 }
 body.dark-only .dropdown-item {
     color: rgba(255, 255, 255, 0.75);
 }
 body.dark-only .dropdown-item:hover,
 body.dark-only .dropdown-item:focus {
-    background-color: #1d1e31;
+    background-color: #281B47;
     color: rgba(255, 255, 255, 0.95);
 }
 body.dark-only .dropdown-divider {
-    border-top-color: #323347;
+    border-top-color: #37285C;
 }
 body.dark-only .list-group-item {
-    background-color: #171829;
-    border-color: #323347;
+    background-color: #1E1338;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.8);
 }
 body.dark-only .list-group-item:hover {
-    background-color: #1d1e31;
+    background-color: #281B47;
 }
 body.dark-only .page-link {
-    background-color: #171829;
-    border-color: #323347;
+    background-color: #1E1338;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.75);
 }
 body.dark-only .page-link:hover {
-    background-color: #1d1e31;
+    background-color: #281B47;
     color: rgba(255, 255, 255, 0.95);
 }
 body.dark-only .page-item.active .page-link {
-    background-color: #5b5fc7;
-    border-color: #5b5fc7;
+    background-color: #2DD6A0;
+    border-color: #2DD6A0;
 }
 body.dark-only .page-item.disabled .page-link {
-    background-color: #171829;
+    background-color: #1E1338;
     color: rgba(255, 255, 255, 0.25);
-    border-color: #323347;
+    border-color: #37285C;
 }
 
 /* ============================================================
    9. BADGES — semantic colours that stay readable on dark
    ============================================================ */
 body.dark-only .badge.bg-light {
-    background-color: #323347 !important;
+    background-color: #37285C !important;
     color: rgba(255, 255, 255, 0.8) !important;
 }
 
@@ -274,8 +275,8 @@ body.dark-only .badge.bg-light {
    ============================================================ */
 body.dark-only .dataTables_wrapper .dataTables_filter input,
 body.dark-only .dataTables_wrapper .dataTables_length select {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.8);
 }
 body.dark-only .dataTables_wrapper .dataTables_info,
@@ -288,18 +289,18 @@ body.dark-only .dataTables_wrapper .dataTables_length label {
    11. PAGE-SPECIFIC — drivers/show.blade.php
    ============================================================ */
 body.dark-only .stat-pill {
-    background: #1d1e31 !important;
-    border-color: #323347 !important;
+    background: #281B47 !important;
+    border-color: #37285C !important;
     color: rgba(255, 255, 255, 0.7) !important;
 }
 body.dark-only .info-row {
-    border-bottom-color: #323347 !important;
+    border-bottom-color: #37285C !important;
 }
 body.dark-only .info-row .fw-bold {
     color: rgba(255, 255, 255, 0.9);
 }
 body.dark-only .doc-preview-wrap {
-    background: #1d1e31 !important;
+    background: #281B47 !important;
 }
 body.dark-only .driver-avatar-placeholder {
     background: rgba(255, 255, 255, 0.08) !important;
@@ -323,7 +324,7 @@ body.dark-only .badge-status-pending {
 }
 /* Document cards — colored border-left stays, background goes dark */
 body.dark-only .doc-card {
-    background: #1d1e31 !important;
+    background: #281B47 !important;
 }
 body.dark-only .doc-card .card-header,
 body.dark-only .doc-card .card-body,
@@ -335,7 +336,7 @@ body.dark-only .doc-card .card-footer {
    12. PAGE-SPECIFIC — trips/index.blade.php
    ============================================================ */
 body.dark-only .driver-profile {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+    background: linear-gradient(135deg, #1E1338 0%, #241745 100%) !important;
 }
 body.dark-only .driver-name {
     color: rgba(255, 255, 255, 0.95) !important;
@@ -352,11 +353,11 @@ body.dark-only .driver-status-badge.offline {
     color: #fc8181 !important;
 }
 body.dark-only .info-card {
-    background: #1d1e31 !important;
+    background: #281B47 !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
 }
 body.dark-only .info-card-header {
-    border-bottom-color: #323347 !important;
+    border-bottom-color: #37285C !important;
 }
 body.dark-only .info-card-title {
     color: rgba(255, 255, 255, 0.9) !important;
@@ -378,14 +379,14 @@ body.dark-only .info-card-icon.stats {
    13. PAGE-SPECIFIC — drivers/pending.blade.php
    ============================================================ */
 body.dark-only .card-header.bg-white {
-    background-color: #171829 !important;
+    background-color: #1E1338 !important;
 }
 
 /* ============================================================
    14. SWEETALERT2 — dark mode
    ============================================================ */
 body.dark-only .swal2-popup {
-    background: #171829;
+    background: #1E1338;
     color: rgba(255, 255, 255, 0.85);
 }
 body.dark-only .swal2-title {
@@ -397,8 +398,8 @@ body.dark-only .swal2-html-container {
 }
 body.dark-only .swal2-input,
 body.dark-only .swal2-textarea {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.85);
 }
 
@@ -407,26 +408,170 @@ body.dark-only .swal2-textarea {
    ============================================================ */
 body.dark-only .select2-container--default .select2-selection--single,
 body.dark-only .select2-container--default .select2-selection--multiple {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.8);
 }
 body.dark-only .select2-container--default .select2-selection__rendered {
     color: rgba(255, 255, 255, 0.8);
 }
 body.dark-only .select2-dropdown {
-    background-color: #171829;
-    border-color: #323347;
+    background-color: #1E1338;
+    border-color: #37285C;
 }
 body.dark-only .select2-container--default .select2-results__option {
     color: rgba(255, 255, 255, 0.75);
 }
 body.dark-only .select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #1d1e31;
+    background-color: #281B47;
     color: rgba(255, 255, 255, 0.95);
 }
 body.dark-only .select2-search--dropdown .select2-search__field {
-    background-color: #1d1e31;
-    border-color: #323347;
+    background-color: #281B47;
+    border-color: #37285C;
     color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================================
+   16. PROTAXI THEME — purple background + mint-green accent
+       (matches the ProShop backoffice look)
+   ============================================================ */
+
+/* Re-point the template's primary colour to ProTaxi green.
+   Most buttons, links and active states in style.css read this var. */
+:root, body {
+    --theme-deafult: #2DD6A0 !important;
+}
+
+/* --- Layout surfaces: deep purple everywhere in dark mode --- */
+body.dark-only,
+body.dark-only .page-wrapper .page-body-wrapper,
+body.dark-only .page-wrapper .page-body-wrapper .page-body {
+    background-color: #150C28 !important;
+    color: rgba(255, 255, 255, 0.8);
+}
+body.dark-only .page-wrapper .page-header {
+    background-color: #1A1030 !important;
+    box-shadow: 0 1px 0 #37285C;
+}
+body.dark-only .page-wrapper .page-header .header-wrapper {
+    background-color: #1A1030 !important;
+}
+body.dark-only .page-body-wrapper .sidebar-wrapper,
+body.dark-only .sidebar-wrapper .sidebar-main {
+    background-color: #120A22 !important;
+}
+body.dark-only footer {
+    background-color: #1A1030 !important;
+    border-top: 1px solid #37285C;
+}
+
+/* --- Headings & key numbers pop in green like the mockup --- */
+body.dark-only h1, body.dark-only h2, body.dark-only h3,
+body.dark-only h4, body.dark-only h5, body.dark-only h6 {
+    color: rgba(255, 255, 255, 0.92);
+}
+body.dark-only .card .counter,
+body.dark-only .widget-card h2,
+body.dark-only .widget-card h3 {
+    color: #2DD6A0;
+}
+
+/* --- Primary buttons: green pill with dark text --- */
+.btn-primary,
+.btn-primary:not(:disabled):not(.disabled) {
+    background-color: #2DD6A0 !important;
+    border-color: #2DD6A0 !important;
+    color: #0E2019 !important;
+    font-weight: 600;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #21B385 !important;
+    border-color: #21B385 !important;
+    color: #0E2019 !important;
+    box-shadow: 0 0 0 .25rem rgba(45, 214, 160, .25) !important;
+}
+.btn-outline-primary {
+    color: #2DD6A0 !important;
+    border-color: #2DD6A0 !important;
+    background-color: transparent !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background-color: #2DD6A0 !important;
+    border-color: #2DD6A0 !important;
+    color: #0E2019 !important;
+}
+
+/* --- Primary text / badges / pills --- */
+.text-primary, .txt-primary, .font-primary {
+    color: #2DD6A0 !important;
+}
+.bg-primary, .badge-primary, .badge.bg-primary {
+    background-color: #2DD6A0 !important;
+    color: #0E2019 !important;
+}
+.page-item.active .page-link {
+    background-color: #2DD6A0 !important;
+    border-color: #2DD6A0 !important;
+    color: #0E2019 !important;
+}
+.page-link {
+    color: #2DD6A0;
+}
+
+/* --- Sidebar: active item in green --- */
+body.dark-only .sidebar-wrapper .sidebar-main .sidebar-links .sidebar-list.active > i,
+body.dark-only .sidebar-wrapper .sidebar-main .sidebar-links .sidebar-list.active .sidebar-link,
+body.dark-only .sidebar-wrapper .sidebar-main .sidebar-links .sidebar-list.active .sidebar-link span,
+.sidebar-wrapper .sidebar-main .sidebar-links .sidebar-link.active,
+.sidebar-wrapper .sidebar-main .sidebar-links .sidebar-link.active span {
+    color: #2DD6A0 !important;
+}
+body.dark-only .sidebar-wrapper .sidebar-main .sidebar-links .sidebar-list.active {
+    background-color: rgba(45, 214, 160, 0.10);
+    border-radius: 8px;
+}
+body.dark-only .sidebar-wrapper .sidebar-main .sidebar-links .sidebar-link:hover,
+body.dark-only .sidebar-wrapper .sidebar-main .sidebar-links .sidebar-link:hover span {
+    color: #2DD6A0;
+}
+
+/* --- Nav pills (Propiedades / Citas / Leads style tabs) --- */
+body.dark-only .nav-pills .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #281B47;
+    border: 1px solid #37285C;
+}
+body.dark-only .nav-pills .nav-link.active {
+    background-color: #2DD6A0 !important;
+    border-color: #2DD6A0 !important;
+    color: #0E2019 !important;
+    font-weight: 600;
+}
+
+/* --- Loader dots + misc accents --- */
+.loader-wrapper .dot {
+    background-color: #2DD6A0 !important;
+}
+body.dark-only .loader-wrapper {
+    background-color: #150C28 !important;
+}
+::selection {
+    background: rgba(45, 214, 160, 0.35);
+}
+/* Scrollbar hint of green on dark purple */
+body.dark-only ::-webkit-scrollbar-track {
+    background: #1A1030;
+}
+body.dark-only ::-webkit-scrollbar-thumb {
+    background: #37285C;
+    border-radius: 6px;
+}
+body.dark-only ::-webkit-scrollbar-thumb:hover {
+    background: #2DD6A0;
 }

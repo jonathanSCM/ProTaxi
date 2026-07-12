@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+    # Block direct web access to the Firebase service-account key
+    <Files "firebase_credentials.json">
+        Require all denied
+    </Files>
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

@@ -14,17 +14,17 @@
 @switch(Route::currentRouteName())
     @case('dashboard')
 
-        <body onload="startTime()">
+        <body class="dark-only" onload="startTime()">
         @break
 
         @case('box_layout')
 
-            <body class="box-layout">
+            <body class="box-layout dark-only">
             @break
 
             @case('layout_rtl')
 
-                <body class="rtl">
+                <body class="rtl dark-only">
                 @break
 
                 @case('layout_dark')
@@ -34,7 +34,7 @@
 
                     @default
 
-                        <body>
+                        <body class="dark-only">
                     @endswitch
 
 

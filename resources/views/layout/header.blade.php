@@ -43,9 +43,6 @@
                         <input type="text" placeholder="Search here...">
                     </div>
                 </li>
-                <li>
-                    <div class="mode"><i class="fa fa-moon-o"></i></div>
-                </li>
                 <li class="onhover-dropdown">
                     <div class="notification-box">
                         <i data-feather="bell"></i>
@@ -100,42 +97,8 @@
 <script>
 
     $(document).ready(function () {
-        // Apply mode on page load based on server value
-        $.ajax({
-            url: "/get-user-mode", // Replace with your actual endpoint to get the user mode
-            type: "GET",
-            success: function (response) {
-                if (response.mode === "dark") {
-                    $("body").addClass("dark-only");
-                } else {
-                    $("body").removeClass("dark-only");
-                }
-            }
-        });
-
-        // Toggle mode and update in the database
-        $(".mode").on("click", function () {
-            let mode = $("body").hasClass("dark-only") ? "light" : "dark";
-
-            $("body").toggleClass("dark-only");
-
-            // Update the mode in the database
-            $.ajax({
-                url: "/update-mode",
-                type: "POST",
-                data: {
-                    mode: mode,
-                    _token: $('meta[name="csrf-token"]').attr(
-                        "content"), // Include CSRF token for security
-                },
-                success: function (response) {
-                    console.log("Mode updated successfully");
-                },
-                error: function (xhr, status, error) {
-                    console.error("Failed to update mode:", error);
-                }
-            });
-        });
+        // ProTaxi theme: dark purple mode is always on
+        $("body").addClass("dark-only");
         // Fetch notifications when the page loads
         $.ajax({
             url: '{{ route('get.notifications') }}',

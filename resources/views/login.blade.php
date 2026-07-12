@@ -5,35 +5,40 @@
 @section('content')
 <style>
     :root {
-        --primary: #6D1B96;
-        --primary-dark: #470E6F;
-        --gradient: linear-gradient(135deg, #6D1B96 0%, #470E6F 100%);
+        --primary: #2DD6A0;
+        --primary-dark: #21B385;
+        --gradient: linear-gradient(135deg, #2DD6A0 0%, #21B385 100%);
         --light: #F2E7FB;
     }
 
     .auth-container {
         min-height: 100vh;
-        background: linear-gradient(135deg, var(--light) 0%, #ffffff 100%);
+        background: linear-gradient(135deg, #150C28 0%, #1A1030 100%);
         display: flex;
         align-items: center;
         padding: 40px 0;
     }
 
     .auth-card {
-        background: white;
+        background: #1E1338;
+        border: 1px solid #37285C;
         border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 20px 60px rgba(109, 27, 150, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
         max-width: 520px;
         margin: 0 auto;
     }
 
     .auth-header {
-        background: var(--gradient);
-        color: white;
+        background: #1A1030;
+        border-bottom: 1px solid #37285C;
+        color: #2DD6A0;
         padding: 40px 30px;
         text-align: center;
     }
+    .auth-header p { color: rgba(255, 255, 255, 0.6); }
+    .auth-body { color: rgba(255, 255, 255, 0.8); }
+    .auth-body label, .auth-body .form-label { color: rgba(255, 255, 255, 0.75); }
 
     .auth-header h3 {
         font-size: 2rem;
@@ -55,12 +60,17 @@
         border-radius: 12px;
         padding: 14px 16px;
         font-size: 1.05rem;
-        border: 2px solid #e0e0e0;
+        background: #281B47;
+        color: rgba(255, 255, 255, 0.9);
+        border: 2px solid #37285C;
         transition: all 0.3s;
     }
+    .form-control::placeholder { color: rgba(255, 255, 255, 0.3); }
     .form-control:focus {
+        background: #281B47;
+        color: rgba(255, 255, 255, 0.95);
         border-color: var(--primary);
-        box-shadow: 0 0 0 4px rgba(109, 27, 150, 0.15);
+        box-shadow: 0 0 0 4px rgba(45, 214, 160, 0.15);
     }
 
     .btn-primary {
@@ -70,12 +80,14 @@
         padding: 14px 30px;
         font-weight: 700;
         font-size: 1.1rem;
+        color: #0E2019;
         transition: all 0.3s;
     }
     .btn-primary:hover {
         background: var(--primary-dark);
+        color: #0E2019;
         transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(109, 27, 150,0.4);
+        box-shadow: 0 10px 30px rgba(45, 214, 160, 0.35);
     }
 
     .otp-input {
@@ -85,11 +97,13 @@
         font-size: 1.6rem;
         font-weight: bold;
         border-radius: 12px;
-        border: 2px solid #e0e0e0;
+        background: #281B47;
+        color: rgba(255, 255, 255, 0.95);
+        border: 2px solid #37285C;
     }
     .otp-input:focus {
         border-color: var(--primary);
-        box-shadow: 0 0 0 4px rgba(109, 27, 150, 0.2);
+        box-shadow: 0 0 0 4px rgba(45, 214, 160, 0.2);
     }
 
     .progress-steps {
@@ -101,8 +115,8 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: #e0e0e0;
-        color: #999;
+        background: #37285C;
+        color: rgba(255, 255, 255, 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -112,12 +126,12 @@
     }
     .step-indicator.active {
         background: var(--gradient);
-        color: white;
+        color: #0E2019;
         transform: scale(1.15);
     }
     .step-indicator.completed {
         background: var(--primary);
-        color: white;
+        color: #0E2019;
     }
 
     .resend-link {
