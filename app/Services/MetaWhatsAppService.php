@@ -474,7 +474,7 @@ class MetaWhatsAppService
     protected function isLikelyBotMessage(string $text): bool
     {
         $botPatterns = [
-            '/^¡hola! bienvenido a delivery avaroa/i',
+            '/^¡hola! bienvenido a \*?(delivery )?(avaroa|protaxi)/i',
             '/^¿dónde recogemos tu paquete/i',
             '/^¡excelente! ¿a dónde entregamos tu paquete/i',
             '/^el servicio de entrega cuesta bs/i',

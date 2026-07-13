@@ -144,7 +144,7 @@ class WhatsAppService
         $humanUrl = (string) config('avaroa.bot.human_agent_url', 'https://wa.me/59178477130');
 
         if ($language === 'es') {
-            return "Gracias por contactar a *AVAROA* 🚚\n\n" .
+            return "Gracias por contactar a *ProTaxi* 🚕\n\n" .
                 "Nuestro horario de atención es de *{$startStr} a {$endStr}* (hora de Bolivia).\n\n" .
                 "Por favor, escríbenos nuevamente durante ese horario para solicitar tu servicio.\n\n" .
                 "¿Necesitas ayuda inmediata?\n" .
@@ -152,7 +152,7 @@ class WhatsAppService
                 "¡Estaremos encantados de ayudarte!";
         }
 
-        return "Thank you for contacting *AVAROA* 🚚\n\n" .
+        return "Thank you for contacting *ProTaxi* 🚕\n\n" .
             "Our working hours are *{$startStr} to {$endStr}* (Bolivia time).\n\n" .
             "Please message us again during that window to request your service.\n\n" .
             "Need immediate help?\n" .
@@ -297,7 +297,7 @@ class WhatsAppService
         $session->update(['state' => 'ASK_VEHICLE_TYPE']);
 
         $responseMessage =
-            "¡Hola! Bienvenido a *AVAROA* 🚚\n\n" .
+            "¡Hola! Bienvenido a *ProTaxi* 🚕\n\n" .
             "¿Qué tipo de vehículo necesitás?\n\n" .
             "1️⃣ *Motocicleta* — Mototaxi y Compras\n" .
             "2️⃣ *Móvil* — Taxi y Carga\n" .

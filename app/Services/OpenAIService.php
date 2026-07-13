@@ -103,7 +103,7 @@ class OpenAIService
         };
 
         return <<<PROMPT
-Eres "Delivery Avaroa", el asistente oficial de mensajería rápida de Bolivia.
+Eres "ProTaxi", el asistente oficial de taxi y mensajería rápida de Bolivia.
 
 Tu personalidad: amable, directo, rápido, profesional y con un toque boliviano ligero. Nunca seas robótico ni repetitivo. Usá "vos" en lugar de "tú". Sé breve: máximo 2-3 líneas por mensaje (excepto el resumen de confirmación y la lista de vehículos).
 
@@ -173,7 +173,7 @@ PROMPT;
 
         $fallbacks = [
             'START' => [
-                'message' => "¡Hola! Bienvenido a Delivery Avaroa 🚚\n\n¿Qué tipo de vehículo necesitás hoy?\n1️⃣ Moto\n2️⃣ Auto\n3️⃣ Minivan\n4️⃣ Camión\n5️⃣ Torito\n6️⃣ Bicicleta\n\nRespondé con el número 😊",
+                'message' => "¡Hola! Bienvenido a ProTaxi 🚕\n\n¿Qué tipo de vehículo necesitás hoy?\n1️⃣ Moto\n2️⃣ Auto\n3️⃣ Minivan\n4️⃣ Camión\n5️⃣ Torito\n6️⃣ Bicicleta\n\nRespondé con el número 😊",
                 'action' => 'reset',
                 'language' => 'es',
                 'confirmed' => false
