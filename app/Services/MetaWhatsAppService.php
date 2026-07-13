@@ -364,6 +364,18 @@ class MetaWhatsAppService
 
             $value = $changes['value'] ?? [];
 
+            // El webhook de Meta es por app, no por número: si esta app tiene
+            // varios números suscritos, llegan eventos de todos. Solo procesamos
+            // los del número configurado en META_WHATSAPP_PHONE_NUMBER_ID.
+            $incomingPhoneId = $value['metadata']['phone_number_id'] ?? null;
+            if ($incomingPhoneId && $this->phoneNumberId && $incomingPhoneId !== $this->phoneNumberId) {
+                Log::info('Webhook ignorado: phone_number_id de otro bot', [
+                    'incoming' => $incomingPhoneId,
+                    'expected' => $this->phoneNumberId,
+                ]);
+                return null;
+            }
+
             if (!empty($value['statuses'])) {
                 $status = $value['statuses'][0];
 
