@@ -106,7 +106,7 @@ return [
         'timezone'        => env('AVAROA_BOT_TZ', 'America/La_Paz'),
         'start_hour'      => (int) env('AVAROA_BOT_START_HOUR', 8),   // 08:00
         'end_hour'        => (int) env('AVAROA_BOT_END_HOUR', 23),    // 23:00
-        'human_agent_url' => env('AVAROA_HUMAN_AGENT_URL', 'https://wa.me/59178477130'),
+        'human_agent_url' => env('AVAROA_HUMAN_AGENT_URL', 'https://wa.me/59162095357'),
     ],
 
     /*

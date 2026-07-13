@@ -1116,7 +1116,7 @@
                     </li>
                     <li class="nav-item px-2">
                         <a class="btn rounded-pill px-4 py-2"
-                           href="https://wa.me/59169160031?text=Hola,%20quiero%20pedir%20un%20servicio%20ProTaxi"
+                           href="https://wa.me/59162095357?text=Hola,%20quiero%20pedir%20un%20servicio%20ProTaxi"
                            target="_blank"
                            style="background:var(--primary);color:white;border:none;font-weight:600;transition:0.3s;box-shadow:0px 4px 10px rgba(109, 27, 150,0.3);">
                             <i class="fab fa-whatsapp me-1"></i> Pedir Ahora
@@ -1145,7 +1145,7 @@
                     </h4>
                     <p class="text-white opacity-75">Servicio rápido y de calidad en delivery, taxi y carga en Bolivia. Conectamos a conductores y clientes en tiempo real.</p>
                     <div class="social-icons mt-4">
-                        <a href="https://wa.me/59169160031" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/59162095357" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>

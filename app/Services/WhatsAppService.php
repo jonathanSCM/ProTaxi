@@ -141,7 +141,7 @@ class WhatsAppService
         $end   = (int) config('avaroa.bot.end_hour', 23);
         $startStr = sprintf('%d:00 a.m.', $start);
         $endStr   = $end >= 13 ? sprintf('%d:00 p.m.', $end - 12) : sprintf('%d:00 p.m.', $end);
-        $humanUrl = (string) config('avaroa.bot.human_agent_url', 'https://wa.me/59178477130');
+        $humanUrl = (string) config('avaroa.bot.human_agent_url', 'https://wa.me/59162095357');
 
         if ($language === 'es') {
             return "Gracias por contactar a *ProTaxi* 🚕\n\n" .
