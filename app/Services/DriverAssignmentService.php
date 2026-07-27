@@ -312,7 +312,9 @@ class DriverAssignmentService
 
         broadcast(new NewDeliveryRequest($trip, $driverIds, 300));
 
-        $this->sendFcmToDrivers($drivers->pluck('fcm_token')->filter()->values()->all(), $trip);
+        // fcm_token lives on `users`, not `drivers` — pluck through the
+        // (already eager-loaded) relation, never directly off the driver.
+        $this->sendFcmToDrivers($drivers->pluck('user.fcm_token')->filter()->values()->all(), $trip);
 
         dispatch(function () use ($trip, $driverIds) {
             $this->checkExpiration($trip->id, $driverIds);
@@ -1110,7 +1112,10 @@ class DriverAssignmentService
 
     private function sendFcmToDrivers(array $fcmTokens, Trip $trip): void
     {
-        if (empty($fcmTokens)) return;
+        if (empty($fcmTokens)) {
+            Log::warning('FCM push skipped: no driver had a token', ['trip_id' => $trip->id]);
+            return;
+        }
 
         try {
             $fcm = app(FcmService::class);

@@ -3,8 +3,8 @@
 namespace App\Events;
 
 use App\Models\Trip;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -84,9 +84,13 @@ class NewDeliveryRequest implements ShouldBroadcast
 
     public function broadcastOn(): array
     {
-        return [
-            new Channel('delivery.requests.all'),
-        ];
+        // Un canal privado por cada conductor notificado (ya filtrados por
+        // tipo de vehículo/elegibilidad) en vez de un canal público sin
+        // filtro — evita que un conductor vea ofertas que no le corresponden.
+        return array_map(
+            fn ($driverId) => new PrivateChannel('driver.' . $driverId),
+            $this->notifiedDriverIds
+        );
     }
 
     public function broadcastAs(): string
