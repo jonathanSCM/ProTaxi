@@ -82,7 +82,7 @@
         border-bottom: 1px solid #e2e8f0; padding: 10px 14px;
     }
     .conv-row { cursor: pointer; transition: background .12s; }
-    .conv-row:hover { background: #f8fafc !important; }
+    .conv-row:hover { background: rgba(255,255,255,.035) !important; }
     .conv-row.is-escalated { border-left: 3px solid #ef4444 !important; }
     .conv-row.is-new { animation: rowPop .4s ease both; }
     @keyframes rowPop { from{background:#dcfce7} to{background:transparent} }

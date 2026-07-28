@@ -276,17 +276,17 @@
 }
 
 /* ── Dark mode overrides ─────────── */
-body:not(.dark) .search-box input { background: rgba(0,0,0,.04); border-color: #e2e8f0; color: #1e293b; }
-body:not(.dark) .trips-table thead th { color: #64748b; border-color: #e2e8f0; }
-body:not(.dark) .trips-table tbody tr { border-color: #f1f5f9; }
-body:not(.dark) .trips-table tbody tr:hover { background: #f8fafc; }
-body:not(.dark) .driver-plate { background: #f1f5f9; color: #64748b; }
-body:not(.dark) .route-origin { color: #64748b; }
-body:not(.dark) .route-dest   { color: #1e293b; }
-body:not(.dark) .pbtn { border-color: #e2e8f0; color: #475569; }
-body:not(.dark) .per-page select { background: #f8fafc; border-color: #e2e8f0; color: #475569; }
-body:not(.dark) .trips-pagination { border-color: #e2e8f0; }
-body:not(.dark) .ftab-all { border-color: #94a3b8; color: #64748b; }
+body:not(.dark-only) .search-box input { background: rgba(0,0,0,.04); border-color: #e2e8f0; color: #1e293b; }
+body:not(.dark-only) .trips-table thead th { color: #64748b; border-color: #e2e8f0; }
+body:not(.dark-only) .trips-table tbody tr { border-color: #f1f5f9; }
+body:not(.dark-only) .trips-table tbody tr:hover { background: #f8fafc; }
+body:not(.dark-only) .driver-plate { background: #f1f5f9; color: #64748b; }
+body:not(.dark-only) .route-origin { color: #64748b; }
+body:not(.dark-only) .route-dest   { color: #1e293b; }
+body:not(.dark-only) .pbtn { border-color: #e2e8f0; color: #475569; }
+body:not(.dark-only) .per-page select { background: #f8fafc; border-color: #e2e8f0; color: #475569; }
+body:not(.dark-only) .trips-pagination { border-color: #e2e8f0; }
+body:not(.dark-only) .ftab-all { border-color: #94a3b8; color: #64748b; }
 
 /* ── Responsive ──────────────────── */
 @media (max-width: 768px) {
