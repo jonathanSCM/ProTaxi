@@ -147,14 +147,22 @@ php artisan key:generate --show
 
 ## 6. Volúmenes persistentes (¡crítico!)
 
-La imagen es inmutable: en cada redeploy se reconstruye. Sin volúmenes, **se pierden las subidas** (fotos de perfil, logos, documentos de conductores). En la app → **Storage / Persistent Storage**, añade:
+La imagen es inmutable: en cada redeploy se reconstruye desde cero. Sin volúmenes, **se pierden las subidas** (fotos de perfil, logos, documentos de conductores, QR codes). En la app → **Storage / Persistent Storage**, añade **exactamente estas rutas** (auditadas contra el código real, no solo las "obvias"):
 
-| Nombre | Mount Path (en el contenedor) |
-|---|---|
-| uploads | `/var/www/html/public/uploads` |
-| storage-app | `/var/www/html/storage/app` |
+| Nombre | Mount Path (en el contenedor) | Qué guarda |
+|---|---|---|
+| uploads | `/var/www/html/public/uploads` | Documentos/fotos de conductores subidos vía API (`FileUploadService`), banners, y el logo/favicon de marca (`uploads/setting/…`) |
+| storage-app | `/var/www/html/storage/app` | Todo lo que pasa por el `Storage::disk('local'\|'public')` de Laravel (incluye `storage/app/public`, destino real de `public/storage` tras el symlink) |
+| profile-photo | `/var/www/html/public/profile_photo` | Fotos de perfil subidas desde el **panel admin** (ruta legacy, distinta de la API) |
+| qrcode | `/var/www/html/public/qrcode` | QR codes generados por el admin |
+| material-file | `/var/www/html/public/material_file` | Comprobantes subidos en el módulo de PayPal (poco usado, pero escribe ahí) |
 
 > El logo/favicon de ProTaxi vive en `public/uploads/setting/…`, así que el volumen `uploads` conserva la marca entre despliegues.
+
+### ⚠️ Lo que NO debes montar como volumen
+- **`public/` completo** — es tentador simplificar montando toda la carpeta, pero **no lo hagas**: `public/` también contiene código que se reconstruye en cada build (`public/build/` de Vite, `public/assets/css/avaroa-admin.css`, `public/protaxi-logo-nbg.png`, etc.). Un volumen sobre `public/` entero **congela ese contenido en el primer deploy y nunca vuelve a actualizarse** — sería exactamente el tipo de bug silencioso donde subes un fix de CSS, redeployas, y sigue viéndose el viejo, indefinidamente. Monta solo las subcarpetas de la tabla de arriba.
+- **`public/build`** — se regenera con `npm run build` en cada imagen; persistirlo congelaría el JS/CSS compilado (gitignored a propósito).
+- **`public/storage`** — es un **symlink** (recreado por `storage:link --force` en cada arranque), no una carpeta real; los datos reales ya están cubiertos por el volumen `storage-app`. Montar un volumen encima de un symlink puede romperlo.
 
 ---
 
