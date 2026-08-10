@@ -17,6 +17,7 @@ class WhatsAppService
     protected DriverAssignmentService $driverService;
     protected MetaWhatsAppService $metaWhatsApp;
     protected OpenAIService $openAI;
+    protected GeocodingService $geocoding;
 
     protected array $resetCommands = [
         'reiniciar', 'reset', 'empezar', 'inicio', 'iniciar', 'nuevo', 'nueva',
@@ -106,12 +107,14 @@ class WhatsAppService
         TripFlowService $tripFlow,
         DriverAssignmentService $driverService,
         MetaWhatsAppService $metaWhatsApp,
-        OpenAIService $openAI
+        OpenAIService $openAI,
+        GeocodingService $geocoding
     ) {
         $this->tripFlow = $tripFlow;
         $this->driverService = $driverService;
         $this->metaWhatsApp = $metaWhatsApp;
         $this->openAI = $openAI;
+        $this->geocoding = $geocoding;
 
         $this->workingHours = [
             'start'    => sprintf('%02d:00', (int) config('avaroa.bot.start_hour', 8)),
@@ -215,6 +218,24 @@ class WhatsAppService
 
         if ($isNativeLocation) {
             $locationData = $this->parseLocationFromPayload($payload);
+        }
+
+        // También aceptamos un link de Google Maps (o "lat,lng" pegado como
+        // texto) mientras esperamos una ubicación — cubre a quienes pegan un
+        // enlace en vez de usar el adjunto nativo de "compartir ubicación".
+        if (!$locationData && in_array($session->state, ['ASK_PICKUP', 'ASK_DESTINATION'], true)) {
+            $coords = $this->geocoding->extractCoordinatesFromText($incomingText);
+            if ($coords) {
+                $locationData = [
+                    'type' => 'coordinates',
+                    'coordinates' => "{$coords['latitude']},{$coords['longitude']}",
+                    'latitude' => $coords['latitude'],
+                    'longitude' => $coords['longitude'],
+                    'location_name' => 'Ubicación compartida (enlace)',
+                    'address' => null,
+                    'raw' => "https://www.google.com/maps?q={$coords['latitude']},{$coords['longitude']}",
+                ];
+            }
         }
 
         $this->handleStateMachine($session, $user, [

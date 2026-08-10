@@ -19,6 +19,87 @@ class GeocodingService
             ?? $this->geocodeWithBigDataCloud($lat, $lng);
     }
 
+    /**
+     * Extracts lat/lng from a Google Maps link (any common format) or a
+     * raw "lat,lng" pair pasted as plain text. Shortened links
+     * (maps.app.goo.gl, goo.gl/maps) carry no coordinates in the URL
+     * itself, so their redirect chain is resolved first.
+     */
+    public function extractCoordinatesFromText(string $text): ?array
+    {
+        $text = trim($text);
+        if ($text === '') {
+            return null;
+        }
+
+        if (preg_match('#https?://(maps\.app\.goo\.gl|goo\.gl/maps)/\S+#i', $text, $m)) {
+            $resolved = $this->resolveShortUrl($m[0]);
+            if ($resolved) {
+                $text = $resolved;
+            }
+        }
+
+        // Most precise: the embedded pin data blob, present on "place"
+        // links — takes priority over the viewport center (@lat,lng).
+        if (preg_match('/!3d(-?\d{1,3}\.\d+)!4d(-?\d{1,3}\.\d+)/', $text, $m)) {
+            return $this->validCoordsOrNull((float) $m[1], (float) $m[2]);
+        }
+
+        // ?q=LAT,LNG or ?query=LAT,LNG
+        if (preg_match('/[?&](?:q|query)=(-?\d{1,3}\.\d+),(-?\d{1,3}\.\d+)/', $text, $m)) {
+            return $this->validCoordsOrNull((float) $m[1], (float) $m[2]);
+        }
+
+        // /@LAT,LNG,zoom — viewport center from a browsed-map link
+        if (preg_match('#/@(-?\d{1,3}\.\d+),(-?\d{1,3}\.\d+)#', $text, $m)) {
+            return $this->validCoordsOrNull((float) $m[1], (float) $m[2]);
+        }
+
+        // Raw "lat,lng" pasted without any link at all
+        if (preg_match('/^(-?\d{1,3}\.\d+),\s*(-?\d{1,3}\.\d+)$/', $text, $m)) {
+            return $this->validCoordsOrNull((float) $m[1], (float) $m[2]);
+        }
+
+        return null;
+    }
+
+    private function validCoordsOrNull(float $lat, float $lng): ?array
+    {
+        if ($lat < -90 || $lat > 90 || $lng < -180 || $lng > 180) {
+            return null;
+        }
+        if ($lat === 0.0 && $lng === 0.0) {
+            return null;
+        }
+        return ['latitude' => $lat, 'longitude' => $lng];
+    }
+
+    private function resolveShortUrl(string $url): ?string
+    {
+        try {
+            $current = $url;
+            for ($i = 0; $i < 5; $i++) {
+                $response = Http::withOptions(['allow_redirects' => false])
+                    ->connectTimeout(3)
+                    ->timeout(5)
+                    ->get($current);
+
+                $location = $response->header('Location');
+                if (!$location) {
+                    return $current;
+                }
+                $current = $location;
+            }
+            return $current;
+        } catch (\Exception $e) {
+            Log::warning('Failed to resolve shortened Maps URL', [
+                'url'   => $url,
+                'error' => $e->getMessage(),
+            ]);
+            return null;
+        }
+    }
+
     private function geocodeWithGoogle(float $lat, float $lng): ?string
     {
         $key = config('services.google.maps_key');
