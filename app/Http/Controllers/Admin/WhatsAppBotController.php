@@ -217,10 +217,13 @@ class WhatsAppBotController extends Controller
                 'delete_url'=> route('whatsapp.destroy', $c->id),
             ]);
 
+        // JSON_INVALID_UTF8_SUBSTITUTE: nombres de contacto de WhatsApp con
+        // bytes UTF-8 inválidos no deben tumbar este endpoint (se llama cada
+        // pocos segundos desde el panel en vivo).
         return response()->json([
             'stats'         => $stats,
             'conversations' => $conversations,
-        ]);
+        ], 200, [], JSON_INVALID_UTF8_SUBSTITUTE);
     }
 
     /**

@@ -152,7 +152,9 @@ class Admin extends Controller
             ->get();
 
         // Return messages with additional sender name and profile photo
-        return response()->json(['messages' => $messages]);
+        // JSON_INVALID_UTF8_SUBSTITUTE: no tumbar este endpoint si algún
+        // mensaje/nombre tiene bytes UTF-8 inválidos.
+        return response()->json(['messages' => $messages], 200, [], JSON_INVALID_UTF8_SUBSTITUTE);
     }
 
 

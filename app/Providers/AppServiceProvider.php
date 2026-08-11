@@ -25,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
                 $app->make(\App\Services\TripFlowService::class),
                 $app->make(DriverAssignmentService::class),
                 $app->make(MetaWhatsAppService::class),
-                $app->make(\App\Services\OpenAIService::class) // ✅ FIXED
+                $app->make(\App\Services\OpenAIService::class), // ✅ FIXED
+                $app->make(\App\Services\GeocodingService::class)
             );
         });
 
