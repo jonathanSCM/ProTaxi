@@ -117,7 +117,16 @@ public function update(UploadedFile $file, ?string $oldPath, string $folder): st
             return true;
         }
 
-        return File::exists(public_path($path))
-            || \Illuminate\Support\Facades\Storage::disk('public')->exists($path);
+        // Nota: driver photos/documents siempre se guardan bajo public/uploads
+        // (ver upload() arriba) — nunca en storage/app/public, que en este
+        // servidor ni siquiera es una carpeta persistente. El fallback a
+        // Storage::disk('public') se quitó porque Flysystem puede lanzar
+        // UnableToCreateDirectory si esa ruta no existe, tumbando cualquier
+        // vista que renderice un avatar (causó un 500 en /admin/drivers).
+        try {
+            return File::exists(public_path($path));
+        } catch (\Throwable $e) {
+            return false;
+        }
     }
 }
