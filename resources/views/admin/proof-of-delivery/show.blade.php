@@ -82,7 +82,14 @@
                                          alt="Foto de entrega {{ $index + 1 }}"
                                          class="img-fluid gallery-img"
                                          data-photo-url="{{ asset($photo) }}"
-                                         onclick="showPhoto('{{ asset($photo) }}')">
+                                         onclick="showPhoto('{{ asset($photo) }}')"
+                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    {{-- Se muestra solo si la foto no carga (se perdió del servidor) --}}
+                                    <div class="text-center text-muted flex-column align-items-center justify-content-center"
+                                         style="display:none; aspect-ratio:1; border:1px dashed #cbd5e1; border-radius:8px;">
+                                        <i class="fas fa-camera fa-2x mb-2"></i>
+                                        <small>Foto no disponible</small>
+                                    </div>
                                 </div>
                                 @endforeach
                             </div>
@@ -177,11 +184,8 @@
                         <div class="mb-3">
                             <div class="detail-label">Conductor</div>
                             <div class="detail-value d-flex align-items-center">
-                                @if($trip->driver?->user?->profile_photo)
-                                    <img src="{{ asset($trip->driver->user->profile_photo) }}"
-                                         class="rounded-circle me-2" width="30" height="30"
-                                         style="object-fit: cover; width: 30px; height: 30px;">
-                                @endif
+                                <x-initials-avatar :name="$trip->driver?->user?->name" :photo="$trip->driver?->user?->profile_photo"
+                                    class="rounded-circle me-2" style="object-fit:cover;width:30px;height:30px;font-size:0.8rem;" />
                                 {{ $trip->driver?->user?->name ?? 'N/A' }}
                             </div>
                         </div>

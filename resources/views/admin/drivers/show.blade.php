@@ -91,14 +91,8 @@
                 <div class="card shadow-sm mb-4 overflow-hidden" style="border-radius:16px; border:none;">
                     <div class="driver-profile-banner">
                         <div class="d-flex flex-column align-items-center">
-                            @if($driver->user?->profile_photo)
-                                <img src="{{ \App\Services\FileUploadService::getUrl($driver->user->profile_photo) }}"
-                                     class="driver-avatar mb-3" alt="">
-                            @else
-                                <div class="driver-avatar-placeholder mb-3">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            @endif
+                            <x-initials-avatar :name="$driver->user?->name" :photo="$driver->user?->profile_photo"
+                                class="driver-avatar mb-3" style="font-size:2.5rem;" />
                             <h5 class="text-white fw-bold mb-1">{{ $driver->user?->name }}</h5>
                             <small class="text-white-50">{{ $driver->user?->email }}</small>
                         </div>
@@ -262,7 +256,13 @@
                                             <div class="doc-preview-wrap mb-3"
                                                  onclick="openImageModal('{{ route('documents.preview', $document) }}', '{{ $documentTypes[$document->type] ?? $document->type }}')">
                                                 @if(in_array($document->mime_type ?? '', ['image/jpeg', 'image/png', 'image/jpg']))
-                                                    <img src="{{ route('documents.preview', $document) }}" alt="Vista Previa">
+                                                    <img src="{{ route('documents.preview', $document) }}" alt="Vista Previa"
+                                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                                    {{-- Se muestra solo si el archivo no carga (se perdió del servidor) --}}
+                                                    <div class="text-center text-muted" style="display:none;">
+                                                        <i class="fas fa-file-circle-exclamation fa-3x mb-2 d-block"></i>
+                                                        <small>Archivo no disponible<br>Pedir reenvío</small>
+                                                    </div>
                                                 @else
                                                     <div class="text-center text-muted">
                                                         <i class="fas fa-file-pdf fa-3x text-danger mb-2 d-block"></i>

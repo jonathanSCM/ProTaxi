@@ -219,15 +219,8 @@
                             <div class="col-md-3">
                                 <div class="d-flex align-items-center">
                                     <div class="me-3">
-                                        @if($pod->trip?->driver?->user?->profile_photo)
-                                            <img src="{{ asset($pod->trip->driver->user->profile_photo) }}"
-                                                 class="rounded-circle" width="50" height="50" style="object-fit: cover;">
-                                        @else
-                                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white"
-                                                 style="width: 50px; height: 50px;">
-                                                {{ strtoupper(substr($pod->trip?->driver?->user?->name ?? 'C', 0, 1)) }}
-                                            </div>
-                                        @endif
+                                        <x-initials-avatar :name="$pod->trip?->driver?->user?->name" :photo="$pod->trip?->driver?->user?->profile_photo"
+                                            class="rounded-circle" style="object-fit:cover;width:50px;height:50px;font-size:1.1rem;" />
                                     </div>
                                     <div>
                                         <strong>{{ $pod->trip?->driver?->user?->name ?? 'N/A' }}</strong>
@@ -274,7 +267,8 @@
                                              class="photo-preview"
                                              alt="Foto de entrega"
                                              data-photo-url="{{ asset($photos[0]) }}"
-                                             onclick="showPhotoGallery({{ json_encode($photos) }}, 0)">
+                                             onclick="showPhotoGallery({{ json_encode($photos) }}, 0)"
+                                             onerror="this.replaceWith(Object.assign(document.createElement('span'), {className:'badge bg-secondary', textContent:'Foto no disponible'}));">
                                         @if(count($photos) > 1)
                                             <span class="badge bg-secondary align-self-center">
                                                 +{{ count($photos) - 1 }}

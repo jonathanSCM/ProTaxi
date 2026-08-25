@@ -100,4 +100,24 @@ public function update(UploadedFile $file, ?string $oldPath, string $folder): st
         // Return asset URL
         return asset($path);
     }
+
+    /**
+     * Whether an uploaded file actually exists on disk. La base de datos
+     * puede tener guardada la ruta aunque el archivo se haya perdido (ver
+     * incidente de volumen persistente de Coolify no enganchado) — las
+     * vistas deben chequear esto antes de intentar mostrar el <img>, para
+     * caer a un placeholder en vez de un ícono de imagen rota.
+     */
+    public static function exists(?string $path): bool
+    {
+        if (!$path) return false;
+
+        // External URL — asumimos que existe, no es un archivo local.
+        if (filter_var($path, FILTER_VALIDATE_URL)) {
+            return true;
+        }
+
+        return File::exists(public_path($path))
+            || \Illuminate\Support\Facades\Storage::disk('public')->exists($path);
+    }
 }

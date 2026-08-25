@@ -164,16 +164,8 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="flex-shrink-0">
-                                                @if($driver->user?->profile_photo)
-                                                    <img src="{{ \App\Services\FileUploadService::getUrl($driver->user->profile_photo) }}"
-                                                         class="rounded-circle" width="48" height="48" alt=""
-                                                         style="object-fit: cover; width: 48px; height: 48px;">
-                                                @else
-                                                    <div class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white"
-                                                         style="width: 48px; height: 48px;">
-                                                        <i class="fas fa-user"></i>
-                                                    </div>
-                                                @endif
+                                                <x-initials-avatar :name="$driver->user?->name" :photo="$driver->user?->profile_photo"
+                                                    class="rounded-circle" style="object-fit:cover;width:48px;height:48px;font-size:1.1rem;" />
                                             </div>
                                             <div class="flex-grow-1 ms-3">
                                                 <h6 class="mb-1 fw-bold">
